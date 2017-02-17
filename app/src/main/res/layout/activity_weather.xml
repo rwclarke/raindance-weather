@@ -1,17 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_weather"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="io.github.rwclarke.raindance.WeatherActivity">
+    tools:context="io.github.rwclarke.raindance.WeatherActivity"
+    android:background="#F1F5F9">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:minHeight="50dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cityLabel"
+            android:layout_weight="1"
+            android:textColor="#222222"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="PARIS" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center_horizontal|center"
+            android:paddingTop="20dp"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:text="SUNNY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/weatherDescription"
+                android:layout_weight="1"
+                android:textColor="#222222"
+                android:layout_gravity="center_horizontal|center"
+                android:gravity="center"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:srcCompat="@drawable/sunny2"
+                android:id="@+id/weatherIcon"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:text="20°"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/currentTemp"
+                    android:layout_weight="1"
+                    android:textColor="#222222"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="80sp" />
+
+                <TextView
+                    android:text=" 25°"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lowhighTemp"
+                    android:layout_weight="1"
+                    android:textColor="#6F6F6F"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="15dp">
+
+                <TextView
+                    android:text="DETAILS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView10"
+                    android:textSize="20sp"
+                    android:textStyle="normal|bold"
+                    android:textAllCaps="false"
+                    android:textColor="#222222" />
+
+                <TableLayout android:background="@android:color/transparent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TableRow android:background="@android:color/transparent"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="FEELS LIKE"
+                            android:textColor="#6F6F6F"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textSize="15sp"></TextView>
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="23"
+                            android:textColor="#6F6F6F"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textSize="15sp"
+                            android:layout_marginLeft="15dp"></TextView>
+
+                    </TableRow>
+
+                    <TableRow android:background="@android:color/transparent"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:textColor="#6F6F6F"
+                            android:text="HUMIDITY"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textSize="15sp"></TextView>
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="33%"
+                            android:textColor="#6F6F6F"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textSize="15sp"
+                            android:layout_marginLeft="15dp"></TextView>
+
+                    </TableRow>
+
+                    <TableRow android:background="@android:color/transparent"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="WIND"
+                            android:textColor="#6F6F6F"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textSize="15sp"></TextView>
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="26.3 KM/H"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textSize="15sp"
+                            android:textColor="#6F6F6F"
+                            android:layout_marginLeft="15dp"></TextView>
+
+                    </TableRow>
+
+                    <TableRow android:background="@android:color/transparent"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="VISIBILITY"
+                            android:textColor="#6F6F6F"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textSize="15sp"></TextView>
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="10 KM"
+                            android:textColor="#6F6F6F"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textSize="15sp"
+                            android:layout_marginLeft="15dp"></TextView>
+
+                    </TableRow>
+                </TableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>
