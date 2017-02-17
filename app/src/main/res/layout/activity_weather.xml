@@ -8,28 +8,6 @@
     tools:context="io.github.rwclarke.raindance.WeatherActivity"
     android:background="#F1F5F9">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:background="#ffffff"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:minHeight="50dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_gravity="center">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/cityLabel"
-            android:layout_weight="1"
-            android:textColor="#222222"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:text="PARIS" />
-
-    </android.support.v7.widget.Toolbar>
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -39,13 +17,22 @@
         android:layout_alignParentStart="true">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
             android:gravity="center_horizontal|center"
-            android:paddingTop="20dp"
-            android:paddingBottom="15dp">
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cityLabel"
+                android:layout_weight="1"
+                android:textColor="#222222"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:text="PARIS" />
 
             <TextView
                 android:text="SUNNY"
@@ -63,23 +50,23 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="180dp">
 
             <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                app:srcCompat="@drawable/sunny2"
+                app:srcCompat="@drawable/sunny"
                 android:id="@+id/weatherIcon"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:layout_height="180dp"
+                android:layout_width="180dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:layout_height="125dp">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -244,5 +231,12 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/content_weather_reports"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="390dp" />
 
 </RelativeLayout>

@@ -13,6 +13,12 @@ public class DailyWeatherReport {
     private String weather;
     private String formattedDate ;
 
+    public static final String WEATHER_TYPE_CLOUDS = "Clouds";
+    public static final String WEATHER_TYPE_CLEAR = "Clear";
+    public static final String WEATHER_TYPE_RAIN = "Rain";
+    public static final String WEATHER_TYPE_WIND = "Wind";
+    public static final String WEATHER_TYPE_SNOW = "Snow";
+
     public String getCityName() {
         return cityName;
     }
