@@ -1,5 +1,10 @@
 package io.github.rwclarke.raindance.model;
 
+import android.content.res.Resources;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by ryanclarke on 2017-02-16.
  */
@@ -59,7 +64,16 @@ public class DailyWeatherReport {
 
     public String rawDateToPretty(String rawDate) {
         // convert raw to formatted date
-        return "May 1";
+
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = format.parse(rawDate);
+            String newstring = new SimpleDateFormat("EEEE HH").format(date);
+            return newstring;
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+            return "N/A";
+        }
 
     }
 
