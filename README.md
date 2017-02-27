@@ -17,8 +17,6 @@ Android Studio, Java
 ## Built With
 
 * [Volley](https://developer.android.com/training/volley/index.html) - HTTP Requests
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
