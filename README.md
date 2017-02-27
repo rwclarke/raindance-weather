@@ -2,7 +2,7 @@
 
 Simple weather app built in Android Studio.
 
-[logo]: https://github.com/rwclarke/raindance-weather/tree/master/README/raindance-readme.png "Rain Dance"
+![Image of RainDance](https://github.com/rwclarke/raindance-weather/blob/master/README/raindance-readme.png)
 
 ## Getting Started
 
